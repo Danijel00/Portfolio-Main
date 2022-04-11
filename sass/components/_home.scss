@@ -1,0 +1,156 @@
+.home {
+  padding: 13rem 0;
+  &__container {
+    position: relative;
+  }
+
+  &__data {
+    text-align: center;
+    display: grid;
+    row-gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  &__handle {
+    &-heading {
+      font-size: var(--biggest-font-size);
+      text-align: center;
+      letter-spacing: 2px;
+      text-shadow: var(--text-shadow);
+    }
+  }
+
+  &__name {
+    font-size: var(--h1-font-size);
+    letter-spacing: 0.4rem;
+  }
+  &__greeting {
+    display: block;
+    color: var(--title-color);
+    letter-spacing: 0.2rem;
+  }
+
+  &__education {
+    color: var(--text-color-light);
+    letter-spacing: 0.2rem;
+  }
+
+  &__greeting,
+  &__education {
+    font-size: var(--small-font-size);
+    font-weight: var(--font-medium);
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 0.5rem;
+  }
+
+  &__social,
+  &__scroll {
+    position: absolute;
+  }
+
+  &__social {
+    bottom: -10rem;
+    left: 0;
+    display: grid;
+    row-gap: 0.5rem;
+
+    &::after {
+      content: "";
+      width: 2rem;
+      height: 2px;
+      background-color: var(--first-color);
+      transform: rotate(90deg) translateX(1rem);
+    }
+
+    &-link {
+      display: flex;
+      padding: 0.25rem;
+      border-radius: 0.25rem;
+      width: max-content;
+      color: var(--first-color);
+      transition: transform 0.2s ease-in-out;
+      font-size: 1.5rem;
+
+      &:hover {
+        background-color: var(--first-color-alt);
+        color: var(--body-color);
+        transform: translateY(-3px);
+      }
+    }
+  }
+
+  &__scroll {
+    color: var(--first-color);
+    bottom: -10rem;
+    right: -1.5rem;
+    display: grid;
+    justify-items: center;
+    row-gap: 2.5rem;
+
+    &-icon {
+      font-size: 1.5rem;
+    }
+
+    &-name {
+      font-size: var(--normal-font-size);
+      transform: rotate(-90deg);
+    }
+  }
+
+  // ANIMATIONS
+  &__greeting {
+    animation: moveInLeft 2s cubic-bezier(0.1, 0, 0.35, 1) 2s;
+  }
+  &__name {
+    animation: moveInRight 2s cubic-bezier(0.1, 0, 0.35, 1) 2s;
+  }
+  &__education,
+  &__scroll,
+  &__social,
+  &__buttons,
+  &__handle {
+    animation: moveInBottom 2.5s cubic-bezier(0.65, 0, 0.35, 1) 2.5s;
+    animation-fill-mode: backwards;
+  }
+}
+
+// RESPONSIVE DESIGN
+.home {
+  // no more than 428px
+  @media only screen and(max-width: $bp-smaller) {
+    padding: 10rem 0;
+  }
+}
+//   // 992px
+//   @media only screen and (min-width: $bp-large) {
+//     &__social {
+//       &-link {
+//         padding: 0.3rem;
+//         font-size: 1.5rem;
+//       }
+//       &::after {
+//         transform: rotate(90deg) translate(1.2rem, 0);
+//       }
+//     }
+//     &__scroll {
+//       row-gap: 2.5rem;
+//       bottom: -8rem;
+
+//       &-icon {
+//         font-size: 1.8rem;
+//         margin-left: 0.2rem;
+//       }
+//       &-name {
+//         font-size: var(--normal-font-size);
+//       }
+//     }
+//     &__social {
+//       bottom: -8rem;
+//     }
+//   }
+// }

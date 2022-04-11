@@ -1,0 +1,39 @@
+%msg {
+  padding: 1rem 2rem;
+  color: var(--title-color);
+  font-size: var(--normal-font-size);
+  position: fixed;
+  top: -5rem;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+  width: 100%;
+  text-align: center;
+  z-index: var(--z-fixed);
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.5, 1, 0.89, 1);
+}
+%msg-visible {
+  top: calc(var(--header-height) + 2.2rem);
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup {
+  &__success {
+    @extend %msg;
+    background-color: var(--good);
+
+    &-sticky {
+      @extend %msg-visible;
+    }
+  }
+  &__error {
+    @extend %msg;
+    background-color: var(--error);
+    &-sticky {
+      @extend %msg-visible;
+    }
+  }
+}

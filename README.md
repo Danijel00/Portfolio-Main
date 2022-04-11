@@ -1,0 +1,7 @@
+----- Personal Portfolio Website -----
+- FULLY RESPONSIVE
+- Technologies used: HTML/SASS/JavaScript
+- Libraries used in this project: MixItUp, and ScrollReveal.
+- RUN PROJECT:
+- a) write npm start in terminal
+- b) use live server

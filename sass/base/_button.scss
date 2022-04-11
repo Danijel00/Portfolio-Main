@@ -1,0 +1,69 @@
+.button {
+  display: inline-block;
+  background-color: var(--first-color);
+  color: var(--body-color);
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: var(--font-medium);
+  position: relative;
+  transition: all 0.4s;
+  transform: translateY(0);
+  animation: moveInBottom 1.2s cubic-bezier(0.6, -0.15, 0.74, 0.05) 0.5s;
+  animation-fill-mode: backwards;
+
+  @media only screen and(max-width: $bp-tiny) {
+    padding: 0.75rem 0.5rem;
+  }
+
+  &:hover {
+    transform: translateY(-3px);
+  }
+
+  &:active {
+    transform: translateY(-1px);
+  }
+
+  &::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.4s;
+  }
+
+  &:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+    background-color: var(--first-color);
+    border-radius: 0.5rem;
+  }
+
+  &--ghost {
+    background-color: transparent;
+    border: 2px solid var(--first-color);
+    color: var(--first-color);
+
+    &:hover::after {
+      background-color: var(--first-color);
+      border-radius: 0.5rem;
+    }
+  }
+
+  &--moon {
+    font-size: 1.25rem;
+    padding: 0.75rem 0.75rem;
+    color: var(--moon-color);
+    background: none;
+    border-radius: 1.5rem;
+    transition: all 0.3s;
+
+    &:hover {
+      background-color: var(--first-color);
+      cursor: pointer;
+    }
+  }
+}

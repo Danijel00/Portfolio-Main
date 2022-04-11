@@ -1,0 +1,114 @@
+.contact {
+  &__container {
+    row-gap: 3rem;
+    padding-bottom: 3rem;
+  }
+  &__content-img {
+    display: flex;
+    padding: 3rem;
+    background: var(--first-color-dark);
+    border-radius: 1rem;
+    clip-path: polygon(
+      0% 0%,
+      100% 0%,
+      100% 85%,
+      75% 85%,
+      75% 100%,
+      50% 85%,
+      0 85%
+    );
+  }
+
+  &__title {
+    margin-bottom: 0 !important;
+    text-align: center;
+  }
+
+  &__form {
+    margin-top: 2rem;
+    &-div {
+      margin-bottom: 2rem;
+      height: 4rem;
+      position: relative;
+    }
+    &-input {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 2px solid var(--text-color-light);
+      background: none;
+      color: var(--text-color);
+      outline: none;
+      padding: 1.5rem;
+      border-radius: 0.75rem;
+      z-index: 1;
+
+      &:focus {
+        outline: none;
+        border-bottom: 2px solid var(--good);
+        // If the input field is empty, or the email is incorrect
+        &:invalid {
+          border-bottom: 2px solid var(--error);
+        }
+      }
+    }
+    &-tag {
+      position: absolute;
+      top: -0.75rem;
+      left: 1.25rem;
+      font-size: var(--smaller-font-size);
+      padding: 0.25rem;
+      background-color: var(--body-color);
+      z-index: 10;
+    }
+    &-area {
+      height: 11rem;
+      textarea {
+        resize: none;
+      }
+    }
+  }
+  // ANIMATIONS
+  &__card {
+    animation: moveInLeft 1.5s cubic-bezier(0.6, -0.28, 0.74, 0.05) 0.5s;
+  }
+  &__form {
+    animation: moveInRight 1.5s cubic-bezier(0.6, -0.28, 0.74, 0.05) 0.5s;
+  }
+}
+
+// RESPONSIVE DESIGN
+.contact {
+  //576px
+  @media only screen and(min-width: $bp-small) {
+    &__content-img {
+      width: 30rem;
+      justify-self: center;
+    }
+    &__form {
+      width: 30rem;
+      margin: 2rem auto 0;
+    }
+  }
+  //768px
+  @media only screen and(min-width: $bp-medium) {
+    &__form {
+      margin: 0 auto;
+    }
+  }
+  // 992px
+  @media only screen and (min-width: $bp-large) {
+    &__container {
+      grid-template-columns: repeat(2, 1fr);
+      justify-content: center;
+    }
+    &__content-img {
+      width: 100%;
+    }
+    &__form {
+      width: 100%;
+    }
+  }
+}

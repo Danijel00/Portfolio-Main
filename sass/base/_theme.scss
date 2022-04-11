@@ -1,0 +1,69 @@
+// Sticky header
+.light-theme {
+  .header__sticky {
+    box-shadow: 0 2px 4px hsla(0, 0%, 1%, 0.1);
+    background-color: #fff;
+  }
+  .header__sticky .bx-moon {
+    color: #fff;
+  }
+}
+
+// Sun / moon icon
+.light-theme .bx-moon {
+  color: #000;
+}
+
+// Fixed menu
+.light-theme .nav__menu {
+  background-color: hsla(var(--second-hue), 45%, 95%, 0.9);
+}
+
+// Home
+.light-theme {
+  .home__social-link {
+    box-shadow: 0 2px 0.8rem hsla(var(--second-hue), 48%, 8%, 0.2);
+  }
+  .home__social-link::after {
+    background-color: var(--title-color);
+  }
+  .home__social-link,
+  .home__scroll {
+    color: var(--title-color);
+  }
+}
+
+// About / Skills / Work
+.light-theme {
+  .about__box,
+  .skills__content,
+  .work__card,
+  .contact__card {
+    box-shadow: 0 2px 0.8rem hsla(var(--second-hue), 48%, 8%, 0.2);
+  }
+  .work__active {
+    color: #fff;
+  }
+  .work__link {
+    font-size: var(--small-font-size);
+    color: #fff;
+  }
+}
+
+// Footer
+.light-theme {
+  .footer__link,
+  .footer__title,
+  .footer__copy {
+    color: #fff;
+  }
+}
+// Scrollbar / Thumb
+.light-theme::-webkit-scrollbar {
+  background-color: hsl(var(--second-hue), 8%, 66%);
+
+  &-thumb {
+    border-radius: 0.5rem;
+    background-color: hsl(var(--second-hue), 8%, 54%);
+  }
+}

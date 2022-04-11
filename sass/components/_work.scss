@@ -1,0 +1,164 @@
+.work {
+  &__container {
+    padding-top: 1rem;
+  }
+
+  &__filters {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 0.3rem;
+    margin-bottom: 2rem;
+  }
+
+  &__item {
+    color: var(--title-color);
+    padding: 0.25rem 0.75rem;
+    font-weight: var(--font-medium);
+    font-size: var(--small-font-size);
+    border-radius: 0.5rem;
+    cursor: pointer;
+  }
+
+  &__card {
+    background-color: var(--container-color);
+    padding: 1rem;
+    border-radius: 1rem;
+  }
+
+  &__title {
+    font-weight: var(--font-medium);
+    margin-bottom: 0.25rem;
+    font-size: var(--normal-font-size);
+  }
+
+  &__tools {
+    color: var(--first-color);
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    column-gap: 0.25rem;
+    width: max-content;
+    color: var(--first-color-alt);
+  }
+
+  &__icon {
+    font-size: 1rem;
+    transition: all 0.4s;
+  }
+
+  &__button:hover &__icon {
+    transform: translateX(3px);
+  }
+
+  &__active {
+    background-color: var(--first-color);
+    color: var(--title-color);
+    transition: all 0.5s;
+    padding: 0.25rem 0.75rem;
+    font-weight: var(--font-medium);
+    border-radius: 0.5rem;
+  }
+
+  &__figure {
+    position: relative;
+
+    &-cap {
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, 20%);
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      opacity: 0;
+      transition: all 0.5s;
+      font-weight: 600;
+      display: flex;
+      column-gap: 1.5rem;
+    }
+
+    &-img {
+      border-radius: 1rem;
+      margin-bottom: 0.75rem;
+      transform: scale(1);
+      transition: all 0.5s;
+    }
+
+    &:hover &-cap {
+      opacity: 1;
+      transform: translate(-50%, -40%);
+    }
+
+    &:hover &-img {
+      // filter: blur(3px) grayscale(100%) brightness(40%);
+      filter: blur(3px) grayscale(50%) brightness(50%);
+      transform: scale(1.02);
+    }
+  }
+
+  &__link {
+    font-size: var(--small-font-size);
+    color: var(--title-color);
+    padding: 0.5rem;
+    background-color: hsla(var(--first-hue), 50%, 50%, 0.8);
+    border-radius: 0.5rem;
+  }
+}
+
+// RESPONSIVE DESIGN
+.work {
+  //320px
+  @media only screen and(max-width: $bp-tiny) {
+    &__item {
+      font-size: var(--smaller-font-size);
+      padding: 0.25rem 0.5rem;
+    }
+    &__filters {
+      column-gap: 0.25rem;
+    }
+  }
+  //576px
+  @media only screen and(min-width: $bp-small) {
+    &__container {
+      justify-content: center;
+    }
+  }
+  //576px
+  @media only screen and(max-width: $bp-small) {
+    &__card {
+      width: fit-content;
+      margin: auto;
+    }
+  }
+  //768px
+  @media only screen and(min-width: $bp-medium) {
+    &__container {
+      grid-template-columns: repeat(2, max-content);
+    }
+    &__figure {
+      width: 20rem;
+    }
+  }
+  // 992px
+  @media only screen and (min-width: $bp-large) {
+    &__container {
+      justify-content: space-evenly;
+    }
+    &__card {
+      padding: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    &__title {
+      margin-bottom: 0.5rem;
+    }
+    &__figure {
+      width: 25rem;
+      &-img {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}

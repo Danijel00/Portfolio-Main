@@ -1,0 +1,110 @@
+.about {
+  &__container {
+    row-gap: 2.5rem;
+  }
+
+  &__img {
+    background-image: linear-gradient(
+        to right bottom,
+        var(--first-color),
+        var(--first-color-alt)
+      ),
+      url("../../assets/img/about/about.jpg");
+    background-size: cover;
+    background-blend-mode: soft-light;
+    height: 14rem;
+    width: 14rem;
+    border-radius: 1.5rem;
+    justify-self: center;
+    box-shadow: var(--img-shadow);
+  }
+
+  &__data {
+    text-align: center;
+  }
+
+  &__info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+  }
+
+  &__box {
+    display: grid;
+    background-color: var(--container-color);
+    border-radius: 0.75rem;
+    padding: 0.75rem 0.5rem;
+  }
+
+  &__icon {
+    font-size: 1.5rem;
+    color: var(--first-color);
+    margin-bottom: 0.5rem;
+  }
+
+  &__title {
+    font-size: var(--small-font-size);
+  }
+
+  &__subtitle {
+    font-size: var(--tiny-font-size);
+  }
+
+  &__description {
+    hyphens: auto;
+    color: var(--title-color);
+    font-weight: 500;
+    text-align: justify;
+    margin-bottom: 2rem;
+  }
+}
+
+// RESPONSIVE DESIGN
+.about {
+  //320px
+  @media only screen and (max-width: $bp-tiny) {
+    padding-top: 5rem;
+    &__info {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  //576px
+  @media only screen and(min-width: $bp-small) {
+    &__info {
+      grid-template-columns: repeat(3, 9rem);
+      justify-content: center;
+    }
+    &__description {
+      padding: 0 4rem;
+    }
+  }
+  // 992px
+  @media only screen and (min-width: $bp-large) {
+    &__container {
+      grid-template-columns: repeat(2, 1fr);
+      align-items: center;
+      column-gap: 4rem;
+    }
+    &__info {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    &__img {
+      height: 25rem;
+      width: 20rem;
+    }
+    &__description {
+      padding: 0;
+      letter-spacing: 0.5px;
+    }
+    &__box {
+      padding: 1rem 1.25rem;
+    }
+    &__title {
+      margin-bottom: 0.3rem;
+    }
+    &__subtitle {
+      font-size: var(--small-font-size);
+    }
+  }
+}

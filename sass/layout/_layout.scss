@@ -1,0 +1,84 @@
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+  max-width: 968px;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1.25rem;
+
+  @media only screen and (max-width: $bp-smaller) {
+    gap: 2rem;
+  }
+}
+
+.main {
+  overflow: hidden;
+}
+
+.section {
+  padding-top: 6rem;
+  padding-bottom: 9.5rem;
+
+  @media only screen and (max-width: $bp-smaller) {
+    padding-top: 7rem;
+    padding-bottom: 0;
+  }
+}
+
+.section__title,
+.section__subtitle {
+  text-align: center;
+}
+
+.section__title {
+  font-size: var(--h2-font-size);
+  margin-bottom: 2rem;
+
+  &::before,
+  &::after {
+    content: "";
+    background-color: var(--text-color-light);
+    display: inline-block;
+    height: 1px;
+    position: relative;
+    vertical-align: middle;
+    width: 10%;
+  }
+
+  &:before {
+    right: 0.5em;
+  }
+  &:after {
+    left: 0.5em;
+  }
+}
+
+.section__subtitle {
+  display: block;
+  font-size: var(--smaller-font-size);
+  color: var(--text-color-light);
+  margin-bottom: 2rem;
+}
+
+// RESPONSIVE MEDIA
+// 992px
+@media only screen and (min-width: $bp-large) {
+  .container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .section {
+    &__title {
+      margin-bottom: 3.5rem;
+
+      &::before,
+      &::after {
+        width: 5%;
+      }
+    }
+  }
+}
