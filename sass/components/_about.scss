@@ -69,6 +69,12 @@
       grid-template-columns: repeat(2, 1fr);
     }
   }
+  //428px
+  @media only screen and(max-width: $bp-smaller) {
+    &__description {
+      text-align: left;
+    }
+  }
   //576px
   @media only screen and(min-width: $bp-small) {
     &__info {
