@@ -206,7 +206,7 @@ img {
   --img-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   --inner-shadow: rgba(255, 255, 255, 0.1) 0px 10px 50px -12px inset,
     rgba(255, 255, 255, 0.1) 0px 10px 16px -50px inset;
-  --text-shadow: 0.3rem 0.3rem 0px var(--first-color);
+  --text-shadow: 0.2rem 0.2rem 0px var(--first-color);
   /*========== Font and typography ==========*/
   /*.5rem = 8px | 1rem = 16px ...*/
   --body-font: "Poppins", sans-serif;
@@ -550,6 +550,10 @@ img {
     .about__info {
       grid-template-columns: repeat(2, 1fr); } }
 
+@media only screen and (max-width: 26.75em) {
+  .about__description {
+    text-align: left; } }
+
 @media only screen and (min-width: 37em) {
   .about__info {
     grid-template-columns: repeat(3, 9rem);
@@ -881,7 +885,7 @@ img {
 .footer {
   background-color: var(--footer-color); }
   .footer__container {
-    padding: 2rem 0 6rem; }
+    padding: 4rem 0 1rem; }
   .footer__title {
     text-align: center;
     margin-bottom: 2rem; }
@@ -928,22 +932,31 @@ img {
   transform: translate(-50%, -50%);
   display: block;
   width: 100%;
-  text-align: center;
   z-index: var(--z-fixed);
   visibility: hidden;
   opacity: 0;
   transition: all 0.4s cubic-bezier(0.5, 1, 0.89, 1); }
 
 .popup__success-sticky, .popup__error-sticky {
-  top: calc(var(--header-height) + 2.2rem);
+  top: calc(var(--header-height) + 3rem);
   visibility: visible;
   opacity: 1; }
 
 .popup__success {
   background-color: var(--good); }
+  @media only screen and (max-width: 446px) {
+    .popup__success-sticky {
+      top: calc(var(--header-height) + 3.8rem);
+      text-align: center; } }
 
 .popup__error {
   background-color: var(--error); }
+
+.popup__success-msg, .popup__error-msg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 0.3rem; }
 
 /*=============== REUSABLE CSS CLASSES ===============*/
 .container {
