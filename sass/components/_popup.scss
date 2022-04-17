@@ -8,14 +8,13 @@
   transform: translate(-50%, -50%);
   display: block;
   width: 100%;
-  text-align: center;
   z-index: var(--z-fixed);
   visibility: hidden;
   opacity: 0;
   transition: all 0.4s cubic-bezier(0.5, 1, 0.89, 1);
 }
 %msg-visible {
-  top: calc(var(--header-height) + 2.2rem);
+  top: calc(var(--header-height) + 3rem);
   visibility: visible;
   opacity: 1;
 }
@@ -27,6 +26,11 @@
 
     &-sticky {
       @extend %msg-visible;
+
+      @media only screen and (max-width: 446px) {
+        top: calc(var(--header-height) + 3.8rem);
+        text-align: center;
+      }
     }
   }
   &__error {
@@ -34,6 +38,16 @@
     background-color: var(--error);
     &-sticky {
       @extend %msg-visible;
+    }
+  }
+
+  &__success,
+  &__error {
+    &-msg {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      column-gap: 0.3rem;
     }
   }
 }
