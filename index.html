@@ -600,11 +600,12 @@
           </div>
           <div class="contact__content">
             <form
-              onsubmit="check();"
               class="contact__form"
               id="form"
               onkeypress="event.keyCode !== 13;"
-            >
+              action="https://formspree.io/f/mnqlqzay"
+              method="POST"
+           >
               <div class="contact__form-div">
                 <label for="name" class="contact__form-tag">Name</label>
 
@@ -740,6 +741,7 @@
     </div>
 
     <!--=============== PRELOADER ===============-->
+    
     <div class="preloader">
       <div class="loader"></div>
     </div>
@@ -749,10 +751,6 @@
     <!--=============== SEND MAIL ===============-->
 
     <script src="assets/js/contact.js"></script>
-
-    <!--=============== SEND MAIL CDN ===============-->
-
-    <script src="assets/js/smtp.js"></script>
 
     <!--=============== SCROLL REVEAL ===============-->
 
